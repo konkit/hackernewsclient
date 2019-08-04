@@ -68,8 +68,6 @@
 
                 this.displayedResults = resultsToDisplay;
 
-                console.log("Displayed results", this.displayedResults);
-
                 this.$forceUpdate();
             },
             incPage() {

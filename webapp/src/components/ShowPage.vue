@@ -10,9 +10,12 @@
       <PocketButton :url-to-save="src"></PocketButton>
     </div>
 
+    <div class="details">
+      <h3>[{{score}}] {{title}}</h3>
+    </div>
+
     <iframe v-if=" src !== '' " :src="src" width="100%" height="100%"></iframe>
 
-    <h3 v-if="title !== ''">{{title}}</h3>
     <p v-if="text">{{text}}</p>
 
     <div class="comments">
@@ -40,29 +43,34 @@
             return {
                 result: {},
                 src: "",
+                score: 0,
+                title: "",
                 comments: [],
 
-                title: "",
                 text: "",
             }
         },
         mounted() {
-            console.log(this.$route.params.id)
-
             axios
                 .get("https://hacker-news.firebaseio.com/v0/item/" + this.$route.params.id + ".json")
                 .then(result => {
-                    this.result = result;
+                    this.result = result.data;
 
-                    if (result.data.url) {
-                      this.src = result.data.url;
+                    console.log("Result: ", JSON.stringify(this.result))
+
+
+
+                    this.title = this.result.title;
+                    this.score = this.result.score;
+
+                    if (this.result.url) {
+                      this.src = this.result.url;
                     } else {
                         // Ask HN type
-                      this.title = result.data.title;
-                      this.text = result.data.text;
+                      this.text = this.result.text;
                     }
 
-                    const comments = result.data.kids;
+                    const comments = this.result.kids;
 
                     comments.forEach(commentId => {
                         axios

@@ -28,8 +28,6 @@
             const kids = this.commentData.kids;
 
             if (kids) {
-                console.log(kids)
-
                 kids.sort((a,b) => b > a).forEach(commentId => {
                     axios
                         .get("https://hacker-news.firebaseio.com/v0/item/" + commentId + ".json")
