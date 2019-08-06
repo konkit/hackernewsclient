@@ -3,7 +3,7 @@
   "description": "Hacker News client by Konkit",
   "manifest_version": 2,
   "name": "Hacker News client by Konkit",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "permissions": [
     "webRequest",
