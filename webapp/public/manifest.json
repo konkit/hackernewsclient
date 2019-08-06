@@ -7,8 +7,7 @@
 
   "permissions": [
     "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
+    "webRequestBlocking"
   ],
 
   "background": {
@@ -16,7 +15,7 @@
   },
 
   "browser_action": {
-    "default_icon": "page-32.png"
+    "default_icon": "favicon.ico"
   }
 
 }

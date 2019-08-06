@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3def570-f9b2-4728-847a-745434672578" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/extension/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/extension/background.js" afterDir="false" />
+    <list default="true" id="c3def570-f9b2-4728-847a-745434672578" name="Default Changelist" comment="Display title on show page">
+      <change afterPath="$PROJECT_DIR$/webapp/public/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/css/app.9289ad83.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/js/app.1ee7b068.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/js/app.1ee7b068.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/js/chunk-vendors.8ae819e8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/js/chunk-vendors.8ae819e8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/page-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/src/components/ShowPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/components/ShowPage.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,16 +25,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extension/manifest.json">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/public/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+            <state relative-caret-position="255">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -46,24 +59,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extension/js/app.e2c6f585.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/src/components/ShowPage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="36" />
+            <state relative-caret-position="45">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+              <folding>
+                <element signature="e#776#807#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extension/background.js">
+        <entry file="file://$PROJECT_DIR$/webapp/public/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -75,21 +86,6 @@
               <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extension/css/app.bba4dbf7.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extension/css/app.edebb4e5.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/dist/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -113,10 +109,11 @@
         <option value="$PROJECT_DIR$/extension/popup/popup.html" />
         <option value="$PROJECT_DIR$/extension/popup/popup.js" />
         <option value="$PROJECT_DIR$/extension/manifest.json" />
-        <option value="$PROJECT_DIR$/extension/background.js" />
         <option value="$PROJECT_DIR$/webapp/src/components/Comment.vue" />
         <option value="$PROJECT_DIR$/webapp/src/components/MainList.vue" />
+        <option value="$PROJECT_DIR$/extension/background.js" />
         <option value="$PROJECT_DIR$/webapp/src/components/ShowPage.vue" />
+        <option value="$PROJECT_DIR$/webapp/public/manifest.json" />
       </list>
     </option>
   </component>
@@ -142,6 +139,18 @@
               <item name="hackernewsclient" type="b2602c69:ProjectViewProjectNode" />
               <item name="hackernewsclient" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hackernewsclient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hackernewsclient" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hackernewsclient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hackernewsclient" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hackernewsclient" type="b2602c69:ProjectViewProjectNode" />
@@ -176,12 +185,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/public" />
       <recent name="$PROJECT_DIR$/extension" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/extension" />
     </key>
   </component>
@@ -232,7 +243,7 @@
       <updated>1564869392565</updated>
       <workItem from="1564869393948" duration="3027000" />
       <workItem from="1564914639550" duration="135000" />
-      <workItem from="1564915363498" duration="1354000" />
+      <workItem from="1564915363498" duration="3562000" />
     </task>
     <task id="LOCAL-00001" summary="Working version as an extension">
       <created>1564947215371</created>
@@ -241,15 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564947215371</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Display title on show page">
+      <created>1564948275096</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564948275096</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4516000" />
+    <option name="totallyTimeSpent" value="6724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -258,8 +275,8 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32959184" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -283,19 +300,16 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/webapp" />
+    </ignored-roots>
     <MESSAGE value="Working version as an extension" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working version as an extension" />
+    <MESSAGE value="Display title on show page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Display title on show page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/extension/popup/popup.html" />
     <entry file="file://$PROJECT_DIR$/extension/popup/popup.js" />
-    <entry file="file://$PROJECT_DIR$/extension/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extension/js/app.e2c6f585.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -317,13 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extension/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/src/components/Comment.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -338,10 +345,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/extension/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/css/app.9289ad83.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/css/app.8c0919dd.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/src/components/ShowPage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="45">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="e#776#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
         </state>
       </provider>
     </entry>

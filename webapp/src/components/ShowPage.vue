@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="navigation">
-      <a href=""><button>Open news list</button></a>
+      <a href=""><button>Back to news list</button></a>
 
       <a :href="src"><button>Original link</button></a>
 
@@ -50,18 +50,35 @@
                 text: "",
             }
         },
+        created() {
+            function rewriteHeaders(e) {
+                console.log("Rewriting headers for ", e)
+
+                const headersToRemove = [
+                    "x-frame-options",
+                    "content-security-policy",
+                    "upgrade-insecure-requests"
+                ];
+
+                return {responseHeaders: e.responseHeaders.filter(h => !headersToRemove.includes(h.name.toLowerCase()))};
+            }
+
+            browser.webRequest.onHeadersReceived.addListener(
+                rewriteHeaders,
+                {urls: ["<all_urls>"]},
+                ['blocking', 'responseHeaders']
+            );
+        },
         mounted() {
             axios
                 .get("https://hacker-news.firebaseio.com/v0/item/" + this.$route.params.id + ".json")
                 .then(result => {
                     this.result = result.data;
 
-                    console.log("Result: ", JSON.stringify(this.result))
-
-
-
                     this.title = this.result.title;
                     this.score = this.result.score;
+
+                    document.title = this.title + " | Hacker News client by Konkit";
 
                     if (this.result.url) {
                       this.src = this.result.url;
