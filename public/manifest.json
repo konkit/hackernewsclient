@@ -17,6 +17,8 @@
 
   "browser_action": {
     "default_icon": "HN.png"
-  }
+  },
+
+  "content_security_policy": "script-src 'self' https://widgets.getpocket.com; object-src 'self'"
 
 }
