@@ -120,6 +120,6 @@
   iframe {
     height: 100%;
     width: 100%;
-    min-height: 70vh;
+    min-height: calc(100vh - 150px);
   }
 </style>

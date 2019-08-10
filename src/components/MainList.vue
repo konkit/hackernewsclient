@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <div>
+      <div class="pagination">
         <button @click="decPage()"> <-</button>
         <button> {{currentPage}}</button>
         <button @click="incPage()"> -></button>
@@ -119,5 +119,7 @@
 
 
 <style scoped>
-
+.pagination {
+  padding: 10px;
+}
 </style>
