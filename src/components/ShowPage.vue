@@ -36,6 +36,7 @@
     import Comment from './Comment'
     import axios from 'axios'
     import PocketButton from "./PocketButton";
+    import {setupModifyHeaders} from "../modifyHeaders";
 
     export default {
         name: "ShowPage",
@@ -50,24 +51,8 @@
                 text: "",
             }
         },
-        created() {
-            function rewriteHeaders(e) {
-                console.log("Rewriting headers for ", e)
-
-                const headersToRemove = [
-                    "x-frame-options",
-                    "content-security-policy",
-                    "upgrade-insecure-requests"
-                ];
-
-                return {responseHeaders: e.responseHeaders.filter(h => !headersToRemove.includes(h.name.toLowerCase()))};
-            }
-
-            browser.webRequest.onHeadersReceived.addListener(
-                rewriteHeaders,
-                {urls: ["<all_urls>"]},
-                ['blocking', 'responseHeaders']
-            );
+        beforeCreate() {
+            setupModifyHeaders()
         },
         mounted() {
             axios
