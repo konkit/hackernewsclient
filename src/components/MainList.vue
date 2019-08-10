@@ -8,6 +8,8 @@
           <a :href="story.url" :target_href="'#/showPage/' + story.id" @mousedown="linkMouseDown($event)">
             [{{story.score}}] {{ story.title }}
           </a>
+          <br/>
+          By {{story.by}} {{formatTime(story.time)}}
         </p>
       </div>
 
@@ -65,6 +67,8 @@
             .get("https://hacker-news.firebaseio.com/v0/item/" + elementId + ".json")
             .then(result => {
 
+              console.log(JSON.stringify(result.data))
+
               resultsToDisplay.push(result.data);
             })
             .catch(err => {
@@ -75,6 +79,29 @@
         this.displayedResults = resultsToDisplay;
 
         this.$forceUpdate();
+      },
+      formatTime(time) {
+        const rtf = new Intl.RelativeTimeFormat('en', {numeric: 'auto'});
+
+        const now = new Date().getTime() / 1000;
+        const diffInSec = time - now;
+
+        function round(v) {
+          return (v >= 0 || -1) * Math.round(Math.abs(v));
+        }
+
+        if (Math.abs(diffInSec) < 60) {
+          return rtf.format(diffInSec, 'second')
+        } else if (Math.abs(diffInSec) < 3600) {
+          let diffInMinutes = round(diffInSec/60);
+          return rtf.format(diffInMinutes, 'minute')
+        } else if (Math.abs(diffInSec) < 60 * 60 * 24) {
+          let diffInHours = round(diffInSec/60/60);
+          return rtf.format(diffInHours, 'hour')
+        } else {
+          let diffInDays = round(diffInSec/3600/24);
+          return rtf.format(diffInDays, 'day')
+        }
       },
       incPage() {
         this.currentPage += 1;
