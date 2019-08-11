@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Hacker News client by Konkit</h2>
+    <h2>Breadth-first Hacker News client by Konkit</h2>
 
     <template v-if="dbResults.length > 0">
       <div v-for="story in displayedResults" :key="story.id">
