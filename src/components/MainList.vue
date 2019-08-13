@@ -1,22 +1,24 @@
 <template>
   <div>
-    <h2>Breadth-first Hacker News client by Konkit</h2>
+    <h1 class="title is-size-4">Breadth-first Hacker News client by Konkit</h1>
 
     <template v-if="dbResults.length > 0">
-      <div v-for="story in displayedResults" :key="story.id">
+      <div class="story" v-for="story in displayedResults" :key="story.id">
         <p>
           <a :href="story.url" :target_href="'#/showPage/' + story.id" @mousedown="linkMouseDown($event)">
             [{{story.score}}] {{ story.title }}
           </a>
-          <br/>
+        </p>
+
+        <p>
           By {{story.by}} {{formatTime(story.time)}}
         </p>
       </div>
 
-      <div class="pagination">
-        <button @click="decPage()"> <-</button>
-        <button> {{currentPage}}</button>
-        <button @click="incPage()"> -></button>
+      <div class="field is-grouped pagination">
+        <button class="button" @click="decPage()"><i class="fas fa-arrow-left"></i></button>
+        <button class="button"> {{currentPage}}</button>
+        <button class="button" @click="incPage()"><i class="fas fa-arrow-right"></i></button>
       </div>
     </template>
 
@@ -93,13 +95,13 @@
         if (Math.abs(diffInSec) < 60) {
           return rtf.format(diffInSec, 'second')
         } else if (Math.abs(diffInSec) < 3600) {
-          let diffInMinutes = round(diffInSec/60);
+          let diffInMinutes = round(diffInSec / 60);
           return rtf.format(diffInMinutes, 'minute')
         } else if (Math.abs(diffInSec) < 60 * 60 * 24) {
-          let diffInHours = round(diffInSec/60/60);
+          let diffInHours = round(diffInSec / 60 / 60);
           return rtf.format(diffInHours, 'hour')
         } else {
-          let diffInDays = round(diffInSec/3600/24);
+          let diffInDays = round(diffInSec / 3600 / 24);
           return rtf.format(diffInDays, 'day')
         }
       },
@@ -119,7 +121,17 @@
 
 
 <style scoped>
-.pagination {
-  padding: 10px;
-}
+
+  .title {
+    margin: 10px;
+  }
+
+  .pagination {
+    margin: 10px;
+  }
+
+  .story {
+    margin: 10px;
+  }
+
 </style>

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="navigation">
       <a href="">
-        <button><-</button>
+        <button class="button"><i class="fas fa-arrow-left"></i></button>
       </a>
 
       <span class="details">
@@ -10,11 +10,11 @@
       </span>
 
       <a :href="src">
-        <button>Original link</button>
+        <button class="button">Original link</button>
       </a>
 
       <a :href="'https://news.ycombinator.com/item?id=' + $route.params.id">
-        <button>Hacker news link</button>
+        <button class="button">Hacker news link</button>
       </a>
 
       <PocketButton :url-to-save="src"></PocketButton>
@@ -111,6 +111,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    border-bottom: 1px solid #b2b2b2;
   }
 
   .navigation .details h3 {
@@ -121,5 +123,9 @@
     height: 100%;
     width: 100%;
     min-height: calc(100vh - 150px);
+  }
+
+  .comments {
+    border-top: 1px solid #b2b2b2;
   }
 </style>
