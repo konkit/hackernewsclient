@@ -3,7 +3,7 @@
   "description": "Breadth-first Hacker News client. Open one tab per article, read content and HN comments from the same tab!",
   "manifest_version": 2,
   "name": "Breadth-first Hacker News client",
-  "version": "1.0.3",
+  "version": "1.0.4",
 
   "permissions": [
     "webRequest",
