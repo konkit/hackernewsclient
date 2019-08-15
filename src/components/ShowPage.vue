@@ -6,7 +6,7 @@
       </a>
 
       <span class="details">
-        <h3>[{{score}}] {{title}}</h3>
+        <h3 class="is-size-5">[{{score}}] {{title}}</h3>
       </span>
 
       <a :href="src">
@@ -25,14 +25,15 @@
 
     <p v-if="text">{{text}}</p>
 
-    <div class="comments">
-      <h3>Comments: </h3>
+    <div class="comments-wrapper">
+      <div class="container comments">
 
-      <div v-for="comment in comments">
-        <hr/>
+        <h5 class="is-size-5">Comments: </h5>
 
-        <Comment :comment-data="comment">
-        </Comment>
+        <div v-for="comment in comments">
+          <Comment :comment-data="comment">
+          </Comment>
+        </div>
       </div>
     </div>
 
@@ -125,7 +126,12 @@
     min-height: calc(100vh - 150px);
   }
 
+  .comments-wrapper {
+    border: 1px solid #b2b2b2;
+  }
+
   .comments {
-    border-top: 1px solid #b2b2b2;
+    border-radius: 4px;
+    padding: 10px;
   }
 </style>

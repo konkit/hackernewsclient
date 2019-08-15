@@ -1,24 +1,26 @@
 <template>
-  <div>
+  <div class="container">
     <h1 class="title is-size-4">Breadth-first Hacker News client by Konkit</h1>
 
     <template v-if="dbResults.length > 0">
       <div class="story" v-for="story in displayedResults" :key="story.id">
-        <p>
+        <p class="is-size-6">
           <a :href="story.url" :target_href="'#/showPage/' + story.id" @mousedown="linkMouseDown($event)">
             [{{story.score}}] {{ story.title }}
           </a>
         </p>
 
-        <p>
+        <p class="is-size-7">
           By {{story.by}} {{formatTime(story.time)}}
         </p>
       </div>
 
-      <div class="field is-grouped pagination">
-        <button class="button" @click="decPage()"><i class="fas fa-arrow-left"></i></button>
-        <button class="button"> {{currentPage}}</button>
-        <button class="button" @click="incPage()"><i class="fas fa-arrow-right"></i></button>
+      <div class="is-centered">
+        <div class="field is-grouped pagination">
+          <button class="button" @click="decPage()"><i class="fas fa-arrow-left"></i></button>
+          <button class="button"> {{currentPage}}</button>
+          <button class="button" @click="incPage()"><i class="fas fa-arrow-right"></i></button>
+        </div>
       </div>
     </template>
 
@@ -36,6 +38,7 @@
         dbResults: [],
         displayedResults: [],
         currentPage: 1,
+        resultsPerPage: 12,
       };
     },
     mounted: function () {
@@ -57,8 +60,8 @@
         e.target.href = newHref
       },
       rerender: function (newPage) {
-        var startOffset = (newPage - 1) * 20;
-        var endOffset = newPage * 20;
+        var startOffset = (newPage - 1) * this.resultsPerPage;
+        var endOffset = newPage * this.resultsPerPage;
 
         const slicedResults = this.dbResults.slice(startOffset, endOffset);
 
@@ -121,17 +124,16 @@
 
 
 <style scoped>
-
   .title {
-    margin: 10px;
+    margin: 10px auto;
   }
 
   .pagination {
-    margin: 10px;
+    margin: 10px auto;
   }
 
   .story {
-    margin: 10px;
+    margin: 10px auto;
   }
 
 </style>

@@ -46,7 +46,8 @@
 
 <style scoped>
 .commentWrapper {
-  border: 1px blue solid;
+  border: 1px #b2b2b2 solid;
+  border-radius: 4px;
   padding: 10px;
   margin: 10px;
 }

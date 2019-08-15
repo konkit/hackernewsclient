@@ -1,11 +1,11 @@
 <template>
-  <template v-if="urlToSave && urlToSave !== ''">
+  <div class="pocket-btn-wrapper" v-if="urlToSave && urlToSave !== ''">
     <a data-pocket-label="pocket"
        class="pocket-btn"
        :data-save-url="urlToSave"
        data-lang="en">
     </a>
-  </template>
+  </div>
 </template>
 
 <script>
@@ -31,6 +31,14 @@
 </script>
 
 <style>
+  .pocket-btn-wrapper {
+    height: 2.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .pocket-btn {
     display: inline-block;
     height: 22px;
