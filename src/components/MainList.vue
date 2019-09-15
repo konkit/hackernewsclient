@@ -16,11 +16,7 @@
       </div>
 
       <div class="is-centered">
-        <div class="field is-grouped pagination">
-          <button class="button" @click="decPage()"><i class="fas fa-arrow-left"></i></button>
-          <button class="button"> {{currentPage}}</button>
-          <button class="button" @click="incPage()"><i class="fas fa-arrow-right"></i></button>
-        </div>
+        <button class="button is-medium is-fullwidth" @click="loadMore()">Load more</button>
       </div>
     </template>
 
@@ -38,7 +34,8 @@
         dbResults: [],
         displayedResults: [],
         currentPage: 1,
-        resultsPerPage: 12,
+        pagesLoaded: 0,
+        resultsPerPage: 20,
       };
     },
     mounted: function () {
@@ -46,7 +43,7 @@
         .get("https://hacker-news.firebaseio.com/v0/topstories.json")
         .then(result => {
           this.dbResults = result.data;
-          this.rerender(1);
+          this.loadMore();
         })
         .catch(err => {
           this.err = err;
@@ -59,13 +56,13 @@
         const newHref = e.target.attributes["target_href"].nodeValue
         e.target.href = newHref
       },
-      rerender: function (newPage) {
-        var startOffset = (newPage - 1) * this.resultsPerPage;
-        var endOffset = newPage * this.resultsPerPage;
+      loadMore: function () {
+        var startOffset = (this.pagesLoaded) * this.resultsPerPage;
+        var endOffset = (this.pagesLoaded+1) * this.resultsPerPage;
 
         const slicedResults = this.dbResults.slice(startOffset, endOffset);
 
-        var resultsToDisplay = [];
+        var resultsToDisplay = this.displayedResults;
 
         slicedResults.forEach(elementId => {
           axios
@@ -82,6 +79,8 @@
         });
 
         this.displayedResults = resultsToDisplay;
+
+        this.pagesLoaded += 1;
 
         this.$forceUpdate();
       },
@@ -107,16 +106,6 @@
           let diffInDays = round(diffInSec / 3600 / 24);
           return rtf.format(diffInDays, 'day')
         }
-      },
-      incPage() {
-        this.currentPage += 1;
-        this.rerender(this.currentPage)
-      },
-      decPage() {
-        if (this.currentPage > 1) {
-          this.currentPage -= 1;
-          this.rerender(this.currentPage)
-        }
       }
     }
   };
@@ -128,8 +117,8 @@
     margin: 10px auto;
   }
 
-  .pagination {
-    margin: 10px auto;
+  .container {
+    margin-bottom: 75px;
   }
 
   .story {
