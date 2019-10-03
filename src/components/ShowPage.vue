@@ -23,7 +23,11 @@
 
     <iframe v-if=" src !== '' " :src="src" width="100%" height="100%"></iframe>
 
-    <p v-if="text">{{text}}</p>
+    <div v-if="text" class="container">
+      <div class="text-wrapper">
+        <div v-html="text"></div>
+      </div>
+    </div>
 
     <div class="comments-wrapper">
       <div class="container comments">
@@ -101,7 +105,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .wrapper {
     width: 100%;
     min-height: 5000px;
@@ -133,5 +137,10 @@
   .comments {
     border-radius: 4px;
     padding: 10px;
+  }
+
+  .text-wrapper p {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 </style>

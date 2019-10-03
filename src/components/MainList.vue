@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title is-size-4">Breadth-first Hacker News client by Konkit</h1>
+    <h1 class="title is-size-4">Breadth-first Hacker News client</h1>
 
     <template v-if="dbResults.length > 0">
       <div class="story" v-for="story in displayedResults" :key="story.id">

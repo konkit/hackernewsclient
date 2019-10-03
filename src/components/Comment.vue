@@ -44,11 +44,16 @@
     }
 </script>
 
-<style scoped>
-.commentWrapper {
-  border: 1px #b2b2b2 solid;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 10px;
-}
+<style>
+  .commentWrapper {
+    border: 1px #b2b2b2 solid;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .commentWrapper p {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
 </style>
